@@ -61,7 +61,8 @@ template <typename T>
 number number::operator^(T ex)
 {
 	n = this->value;
-	for(int i = 0; i < ex; i++)
+	int e = (int)ex;
+	for(int i = 0; i < e; i++)
 		n *= this->value;
 	return number(this->value = n);
 }
