@@ -12,49 +12,49 @@ number::number(const number& other)
 template <typename T>
 number number::operator=(const number& other)
 {
-	return number(this->value = other.value);    
+	return this->value = other.value;    
 }
 
 template <typename T>
 number number::operator+(T value)
 {
-	return number(this->value + value);
+	return this->value + value;
 }
 
 template <typename T>
 number number::operator+=(T value)
 {
-	return number(this->value += value);
+	return this->value += value;
 }
 
 template <typename T>
 number number::operator-(T value)
 {
-	return number(this->value - value);
+	return this->value - value;
 }
 
 template <typename T>
 number number::operator-=(T value)
 {
-	return number(this->value -= value);
+	return this->value -= value;
 }
 
 template <typename T>
 number number::operator*(T value)
 {
-	return number(this->value * value);
+	return this->value * value;
 }
 
 template <typename T>
 number number::operator*=(int value)
 {
-	return Integer(this->value *= value);
+	return this->value *= value;
 }
 
 template <typename T>
 number number::operator/(T value)
 {
-	return Integer(this->value / value);
+	return this->value / value;
 }
 
 template <typename T>
@@ -64,7 +64,7 @@ number number::operator^(T ex)
 	int e = (int)ex;
 	for(int i = 0; i < e; i++)
 		n *= this->value;
-	return number(this->value = n);
+	return this->value = n;
 }
 
 template <typename T>
@@ -122,15 +122,15 @@ number::operator int()
 }
 
 template <typename U>
-friend number<U>& operator <<(std::ostream& os, const Integer&)
+friend number<U>& operator <<(std::ostream& os, const Integer& x)
 {
-	os << this->value;
+	os << x.value;
 	return os;
 }
 
 template <typename U>
-friend number<U>& operator >>operator >>(std::istream& os, Integer&)
+friend number<U>& operator >>operator >>(std::istream& os, Integer& x)
 {
-	os >> this->value;
+	os >> x.value;
 	return os;
 }
