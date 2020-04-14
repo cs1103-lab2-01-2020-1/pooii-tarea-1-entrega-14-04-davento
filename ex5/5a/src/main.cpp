@@ -4,10 +4,10 @@ using namespace std;
 
 int	main()
 {
-	integer a;
-	integer b(4);
-	integer c(3);
-	integer d = c;
+	Integer a;
+	Integer b(4);
+	Integer c(3);
+	Integer d = c;
 	cout<<d + b<<"\n";
 	cout<<(int)(c + 2)<<"\n";
 	cin>>a;

@@ -1,4 +1,8 @@
+#ifndef INTEGER_H
+#define INTEGER_H
+
 #include <iostream>
+using namespace std;
 
 class	Integer
 {
@@ -27,3 +31,5 @@ class	Integer
 		friend std::ostream& operator <<(std::ostream& os, const Integer&);
 		friend std::istream& operator >>(std::istream& os, Integer&);
 };
+
+#endif
