@@ -1,4 +1,4 @@
-cmake_minimum_required(3.10.2)
+cmake_minimum_required(VERSION 3.10.2)
 project(ex5b)
 file (GLOB SOURCES "src/*")
 add_executable(ex05b ${SOURCES})
