@@ -1,6 +1,6 @@
 #include "integer.h"
 
-Integer::Integer() {}
+Integer::Integer() {value = 0;}
 
 Integer::Integer(int value): value(value) {}
 
@@ -8,6 +8,8 @@ Integer::Integer(const Integer& other)
 {
 	this->value = other.value;
 }
+
+Integer::~Integer() {}
 
 Integer Integer::operator=(const Integer& other)
 {

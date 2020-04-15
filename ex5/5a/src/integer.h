@@ -12,6 +12,7 @@ class	Integer
 		Integer();
 		Integer(int value);
 		Integer(const Integer& other);
+		~Integer();
 		Integer operator=(const Integer& other);
 		Integer operator+(int value);
 		Integer operator+=(int value);
