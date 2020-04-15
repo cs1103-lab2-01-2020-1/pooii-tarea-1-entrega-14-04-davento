@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/ex05a.dir/src/integer.cpp.o CMakeFiles/ex05a.dir/src/main.cpp.o  -o ex05a 
