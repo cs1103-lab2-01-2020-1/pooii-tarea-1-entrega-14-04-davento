@@ -1,66 +1,72 @@
-#include 'Integer.h'
+#include "number.h"
 
 template <typename T>
-number::number(T value): this->value(value) {}
+number<T>::number() {value = 0;}
 
 template <typename T>
-number::number(const number& other)
+number<T>::number(T value): value(value) {}
+
+template <typename T>
+number<T>::number(const number& other)
 {
 	this->value = other.value;
 }
 
 template <typename T>
-number number::operator=(const number& other)
+number<T>::~number() {}
+
+template <typename T>
+number<T> number<T>::operator=(const number& other)
 {
 	return this->value = other.value;    
 }
 
 template <typename T>
-number number::operator+(T value)
+number<T> number<T>::operator+(T value)
 {
 	return this->value + value;
 }
 
 template <typename T>
-number number::operator+=(T value)
+number<T> number<T>::operator+=(T value)
 {
 	return this->value += value;
 }
 
 template <typename T>
-number number::operator-(T value)
+number<T> number<T>::operator-(T value)
 {
 	return this->value - value;
 }
 
 template <typename T>
-number number::operator-=(T value)
+number<T> number<T>::operator-=(T value)
 {
 	return this->value -= value;
 }
 
 template <typename T>
-number number::operator*(T value)
+number<T> number<T>::operator*(T value)
 {
 	return this->value * value;
 }
 
 template <typename T>
-number number::operator*=(int value)
+number<T> number<T>::operator*=(T value)
 {
 	return this->value *= value;
 }
 
 template <typename T>
-number number::operator/(T value)
+number<T> number<T>::operator/(T value)
 {
 	return this->value / value;
 }
 
 template <typename T>
-number number::operator^(T ex)
+number<T> number<T>::operator^(T ex)
 {
-	n = this->value;
+	T n = this->value;
 	int e = (int)ex;
 	for(int i = 0; i < e; i++)
 		n *= this->value;
@@ -68,7 +74,7 @@ number number::operator^(T ex)
 }
 
 template <typename T>
-bool number::operator>(T value)
+bool number<T>::operator>(T value)
 {
 	if (this->value > value)
 		return true;
@@ -76,7 +82,7 @@ bool number::operator>(T value)
 }
 
 template <typename T>
-bool number::operator>=(T value)
+bool number<T>::operator>=(T value)
 {
 	if (this->value >= value)
 		return true;
@@ -84,7 +90,7 @@ bool number::operator>=(T value)
 }
 
 template <typename T>
-bool number::operator<(T value)
+bool number<T>::operator<(T value)
 {
 	if (this->value < value)
 		return true;
@@ -92,7 +98,7 @@ bool number::operator<(T value)
 }
 
 template <typename T>
-bool number::operator<=(T value)
+bool number<T>::operator<=(T value)
 {
 	if (this->value <= value)
 		return true;
@@ -100,7 +106,7 @@ bool number::operator<=(T value)
 }
 
 template <typename T>
-bool number::operator==(T value)
+bool number<T>::operator==(T value)
 {
 	if (this->value == value)
 		return true;
@@ -108,7 +114,7 @@ bool number::operator==(T value)
 }
 
 template <typename T>
-bool number::operator!=(T value)
+bool number<T>::operator!=(T value)
 {
 	if (this->value != value)
 		return true;
@@ -116,20 +122,20 @@ bool number::operator!=(T value)
 }
 
 template <typename T>
-number::operator int()
+number<T>::operator int()
 {
 	return (int)this->value;
 }
 
 template <typename U>
-friend number<U>& operator <<(std::ostream& os, const Integer& x)
+ostream& operator <<(ostream& os, const number<U>& x)
 {
 	os << x.value;
 	return os;
 }
 
 template <typename U>
-friend number<U>& operator >>operator >>(std::istream& os, Integer& x)
+istream& operator >>(istream& os, number<U>& x)
 {
 	os >> x.value;
 	return os;
